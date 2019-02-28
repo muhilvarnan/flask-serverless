@@ -1,3 +1,4 @@
 before_build:
   - echo "Run pylint"
+  - pip install pylint
   - pylint hello.py
