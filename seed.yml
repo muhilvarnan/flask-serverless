@@ -1,0 +1,3 @@
+before_build:
+  - echo "Run pylint"
+  - pylint hello.py
