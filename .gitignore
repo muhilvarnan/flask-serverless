@@ -1,3 +1,6 @@
 .vscode
 /test
 *.pyc
+.env
+.serverless
+node_modules/
