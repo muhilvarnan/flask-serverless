@@ -1,4 +1,4 @@
 before_build:
   - echo "Run pylint"
-  - pip install -r requirements.text
+  - pip install -r requirements.txt
   - pylint hello.py
