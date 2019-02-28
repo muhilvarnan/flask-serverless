@@ -13,7 +13,7 @@ plugins:
 
 custom:
   wsgi:
-    app: hello.app
+    app: hello.APP
     packRequirements:
       dockerizePip: false
 functions:
