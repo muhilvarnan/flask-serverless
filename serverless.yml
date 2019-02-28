@@ -14,7 +14,8 @@ plugins:
 custom:
   wsgi:
     app: hello.app
-    packRequirements: false
+    packRequirements:
+      dockerizePip: false
 functions:
   app:
     handler: wsgi.handler
