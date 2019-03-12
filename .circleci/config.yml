@@ -8,3 +8,9 @@ jobs:
       - checkout
       - run: python -m unittest discover -s tests
 
+workflows:
+   version: 2.1
+   jobs:
+     - test
+
+
