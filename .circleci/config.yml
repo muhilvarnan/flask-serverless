@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: npm install serverless
       - run: npm install
-      - run: sls deploy --alias dev
+      - run: ./node_modules/.bin/sls deploy --alias dev
 
 workflows:
    version: 2.1
