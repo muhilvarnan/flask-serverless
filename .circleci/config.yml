@@ -1,6 +1,14 @@
 version: 2.1
 
 jobs:
+  serverless-deploy:
+    docker:
+      - image: node:10.15.3-alpine
+    steps:
+        - checkout
+        - run: npm install serverless -g
+        - run: npm install
+        - run: sls deploy --alias dev
   test:
     docker:
       - image: python:2.7-alpine3.8
@@ -14,5 +22,6 @@ workflows:
    alm-deploy:
      jobs:
        - test
+       - serverless-deploy
 
 
