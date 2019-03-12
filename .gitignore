@@ -4,3 +4,4 @@
 .env
 .serverless
 node_modules/
+.idea/
