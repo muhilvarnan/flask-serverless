@@ -15,7 +15,7 @@ jobs:
       - checkout
       - run: npm install serverless
       - run: npm install
-      - run: apk add python pip
+      - run: apk add python py-pip
       - run: ./node_modules/.bin/sls deploy --alias dev
 
 workflows:
