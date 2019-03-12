@@ -2,9 +2,7 @@
   "name": "flask-hello-world",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {
-    "serverless": "^1.38.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "serverless-python-requirements": "^4.3.0",
     "serverless-wsgi": "^1.7.1"
