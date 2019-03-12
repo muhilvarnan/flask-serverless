@@ -18,4 +18,4 @@ class ServiceNowTest(unittest.TestCase):
 
         obj = service_now.Adapater("https://www.booknomads.com")
 
-        self.assertEqual(obj.get_books(), [])
+        self.assertEqual(obj.get_books(), books)
