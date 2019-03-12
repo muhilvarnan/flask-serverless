@@ -9,8 +9,6 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python -m unittest discover -s tests
   serverless-deploy:
-    requires:
-      - test
     docker:
       - image: node:10.15.3-alpine
     steps:
@@ -21,9 +19,12 @@ jobs:
 
 workflows:
    version: 2.1
-   alm-deploy:
+   build-deploy:
      jobs:
        - test
-       - serverless-deploy
+       - serverless-deploy:
+           requires:
+              - test
+
 
 
