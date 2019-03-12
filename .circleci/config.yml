@@ -15,7 +15,8 @@ jobs:
       - checkout
       - run: npm install serverless
       - run: npm install
-      - run: apt-get install python2.7 python-pip
+      - run: sudo apt-get update
+      - run: sudo apt-get install python2.7 python-pip
       - run: ./node_modules/.bin/sls deploy --alias dev
 
 workflows:
