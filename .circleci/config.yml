@@ -16,7 +16,7 @@ jobs:
       - run: npm install serverless
       - run: npm install
       - run: apk add python py-pip
-      - run: ./node_modules/.bin/sls deploy --alias dev
+      - run: ./node_modules/.bin/sls deploy --alias $alias
 
 workflows:
    version: 2.1
@@ -26,6 +26,8 @@ workflows:
        - serverless-deploy:
            requires:
               - test
+           context: dev
+
    build-deploy-test:
       jobs:
         - hold:
@@ -36,6 +38,7 @@ workflows:
         - serverless-deploy:
             requires:
               - test
+            context: test
 
 
 
