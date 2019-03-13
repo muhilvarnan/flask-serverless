@@ -11,10 +11,10 @@ jobs:
   pylint:
     docker:
       - image: python:2.7-alpine3.8
-      steps:
-        - checkout
-        - run: pip install -r requirements.txt
-        - run: pylint
+    steps:
+      - checkout
+      - run: pip install -r requirements.txt
+      - run: pylint
   serverless-deploy:
     docker:
       - image: node:10.15.3-alpine
