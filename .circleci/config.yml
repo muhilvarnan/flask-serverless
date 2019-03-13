@@ -13,10 +13,12 @@ jobs:
       - image: node:10.15.3-alpine
     steps:
       - checkout
+      - run: ls
       - run: npm install serverless
       - run: npm install
       - run: apk add python py-pip
       - run: ./node_modules/.bin/sls deploy --alias $alias
+
 
 workflows:
    version: 2.1
