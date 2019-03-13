@@ -11,7 +11,7 @@ from mock_data import books
 class ServiceNowTest(unittest.TestCase):
     def test_get_books(self, mock_get):
         """
-        should return get books test
+        should return get books
         """
         mock_get.return_value.ok = True
         mock_get.return_value.json.return_value = books
