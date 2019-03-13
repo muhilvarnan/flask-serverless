@@ -8,6 +8,13 @@ jobs:
       - checkout
       - run: pip install -r requirements.txt
       - run: python -m unittest discover -s tests
+  pylint:
+    docker:
+      - image: python:2.7-alpine3.8
+      steps:
+        - checkout
+        - run: pip install -r requirements.txt
+        - run: pylint
   serverless-deploy:
     docker:
       - image: node:10.15.3-alpine
@@ -19,15 +26,16 @@ jobs:
       - run: apk add python py-pip
       - run: ./node_modules/.bin/sls deploy --alias $alias
 
-
 workflows:
    version: 2.1
    build-deploy:
      jobs:
+       - pylint
        - test
        - serverless-deploy:
            name: deploy-dev
            requires:
+              - pylint
               - test
            context: dev
            filters:
