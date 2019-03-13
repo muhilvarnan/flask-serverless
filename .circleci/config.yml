@@ -20,12 +20,24 @@ jobs:
 
 workflows:
    version: 2.1
-   build-deploy:
+   build-deploy-dev:
      jobs:
        - test
        - serverless-deploy:
            requires:
               - test
+   build-deploy-test:
+      jobs:
+        - hold:
+            type: approval
+        - test:
+            requires:
+              - hold
+        - serverless-deploy:
+            requires:
+              - test
+
+
 
 
 
