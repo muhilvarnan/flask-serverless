@@ -3,14 +3,14 @@ service: flask-hello-world
 provider:
   name: aws
   runtime: python2.7
-  stage: dev
+  stage: non-prod
   region: us-east-2
   memorySize: 128
 
 plugins:
   - serverless-wsgi
   - serverless-python-requirements
-
+  - serverless-aws-alias
 custom:
   wsgi:
     app: hello.APP

@@ -2,9 +2,12 @@
   "name": "flask-hello-world",
   "description": "",
   "version": "0.1.0",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.420.0"
+  },
   "devDependencies": {
     "serverless-python-requirements": "^4.3.0",
-    "serverless-wsgi": "^1.7.1"
+    "serverless-wsgi": "^1.7.1",
+    "serverless-aws-alias": "^1.7.1"
   }
 }

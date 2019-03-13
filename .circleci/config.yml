@@ -17,6 +17,11 @@ jobs:
       - run: npm install
       - run: apk add python py-pip
       - run: ./node_modules/.bin/sls deploy --alias $alias
+      - run: ./circleci/scripts/get-alias-info > workspace/lamda-artifacts
+      - persist_to_workspace:
+           root: workspace
+          paths:
+            - lamda-artifacts
 
 workflows:
    version: 2.1
