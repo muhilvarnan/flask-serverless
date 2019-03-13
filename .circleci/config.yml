@@ -20,7 +20,7 @@ jobs:
 
 workflows:
    version: 2.1
-   build-deploy-dev:
+   build-deploy:
      jobs:
        - test
        - serverless-deploy:
