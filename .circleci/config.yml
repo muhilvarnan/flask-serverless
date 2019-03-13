@@ -23,15 +23,17 @@ workflows:
    build-deploy-dev:
      jobs:
        - test
-       - serverless-deploy-dev:
+       - serverless-deploy:
+           name: deploy-dev
            requires:
               - test
            context: dev
        - hold:
            type: approval
-       - serverless-deploy-test:
+       - serverless-deploy:
+           name: deploy-test
            requires:
-             - serverless-deploy-dev
+             - deploy-dev
              - hold
            context: test
 
