@@ -27,18 +27,12 @@ workflows:
            requires:
               - test
            context: dev
-
-   build-deploy-test:
-      jobs:
-        - hold:
-            type: approval
-        - test:
-            requires:
-              - hold
-        - serverless-deploy:
-            requires:
-              - test
-            context: test
+       - hold:
+           type: approval
+       - serverless-deploy:
+           requires:
+             - hold
+           context: test
 
 
 
