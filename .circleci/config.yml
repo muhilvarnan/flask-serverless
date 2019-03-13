@@ -28,6 +28,9 @@ workflows:
            requires:
               - test
            context: dev
+           filters:
+             branches:
+               only: master
        - hold:
            type: approval
        - serverless-deploy:
@@ -36,6 +39,9 @@ workflows:
              - deploy-dev
              - hold
            context: test
+           filters:
+             branches:
+               only: master
 
 
 
