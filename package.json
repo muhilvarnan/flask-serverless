@@ -3,7 +3,7 @@
   "description": "",
   "version": "0.1.0",
   "dependencies": {
-    "aws-sdk": "^2.420.0"
+    "aws-sdk": "^2.814.0"
   },
   "devDependencies": {
     "serverless-python-requirements": "^4.3.0",
